@@ -1,4 +1,11 @@
 {
   "clientes": [
+    {
+      "nombre": "Miguel",
+      "email": "miguel@correo.com",
+      "telefono": 5787844,
+      "empresa": "Kibernum",
+      "id": 1
+    }
   ]
 }
