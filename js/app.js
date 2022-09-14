@@ -11,24 +11,44 @@ import { obtenerClientes } from './api.js';
     clientes.forEach( (cliente) => {
       const  { nombre, email, telefono, empresa, id } = cliente;
       const row = document.createElement('tr');
-      row.innerHTML = row.innerHTML + `
-       <td>
-        <p>${nombre}</p>
-       </td>
-       <td>
-        <p>${email}</p>
-       </td>
+
+      row.innerHTML += `
         <td>
-        <p>${telefono}</p>
+          <p>${nombre}</p>
         </td>
         <td>
-         <p>${empresa}</p>
+          <p>${email}</p>
+        </td>
+        <td>
+          <p>${telefono}</p>
+        </td>
+        <td>
+          <p>${empresa}</p>
         </td>
         <td>
           <a>Editar</a>
           <a>Eliminar</a>
         </td>
-      `;
+     `;
+
+           // row.innerHTML = row.innerHTML + `
+      //  <td>
+      //   <p>${nombre}</p>
+      //  </td>
+      //  <td>
+      //   <p>${email}</p>
+      //  </td>
+      //   <td>
+      //   <p>${telefono}</p>
+      //   </td>
+      //   <td>
+      //    <p>${empresa}</p>
+      //   </td>
+      //   <td>
+      //     <a>Editar</a>
+      //     <a>Eliminar</a>
+      //   </td>
+      // `;
 
       listado.appendChild(row);
     });

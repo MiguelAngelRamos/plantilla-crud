@@ -6,6 +6,27 @@
       "telefono": 5787844,
       "empresa": "Kibernum",
       "id": 1
+    },
+    {
+      "nombre": "pedro",
+      "email": "pedro@correo.com",
+      "telefono": 381838138,
+      "empresa": "Kibernum Academy",
+      "id": 2
+    },
+    {
+      "nombre": "Diego",
+      "email": "diego@correo.com",
+      "telefono": 331313138,
+      "empresa": "Kibernum Academy",
+      "id": 3
+    },
+    {
+      "nombre": "Antonio",
+      "email": "antonio@correo.com",
+      "telefono": "314241341",
+      "empresa": "Kibernum",
+      "id": 4
     }
   ]
 }
