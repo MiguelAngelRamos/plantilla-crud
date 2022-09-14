@@ -21,8 +21,21 @@ export const nuevoCliente = async (cliente) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
+    });
+    window.location.href='index.html';
   } catch (error) {
     throw error;
   }
-}
+};
+
+export const eliminarCliente = async (id) => {
+  try {
+    //* http://localhost:3000/clientes/2
+    await fetch(`${URL}/${id}`, {
+      method: 'DELETE'
+    });
+    window.location.href = 'index.html';
+  } catch (error) {
+    throw error;
+  }
+};

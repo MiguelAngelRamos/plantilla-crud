@@ -1,20 +1,6 @@
 {
   "clientes": [
     {
-      "nombre": "Miguel",
-      "email": "miguel@correo.com",
-      "telefono": 5787844,
-      "empresa": "Kibernum",
-      "id": 1
-    },
-    {
-      "nombre": "pedro",
-      "email": "pedro@correo.com",
-      "telefono": 381838138,
-      "empresa": "Kibernum Academy",
-      "id": 2
-    },
-    {
       "nombre": "Diego",
       "email": "diego@correo.com",
       "telefono": 331313138,
@@ -34,6 +20,13 @@
       "telefono": "414141341341",
       "empresa": "Kibernum",
       "id": 5
+    },
+    {
+      "nombre": "Rocky",
+      "email": "rocky@correo.com",
+      "telefono": "3818418481",
+      "empresa": "Kibernum",
+      "id": 6
     }
   ]
 }
