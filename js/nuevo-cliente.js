@@ -1,5 +1,6 @@
 // import { nuevoCliente } from "./api";
 import { nuevoCliente } from './api.js';
+import { mostrarAlerta } from './utils/show-alert.js';
 import { validatorObject } from './utils/validator-object.js';
 (()=>{
   const formulario = document.querySelector('#formulario');
@@ -31,7 +32,8 @@ import { validatorObject } from './utils/validator-object.js';
     //   empresa: empresa
     // };
     if(validatorObject(cliente)) {
-      console.log('Los campos son requeridos!');
+      // console.log('Los campos son requeridos!');
+      mostrarAlerta('Los campos son requeridos!');
       return;
     }
     nuevoCliente(cliente);
