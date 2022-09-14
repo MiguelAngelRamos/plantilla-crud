@@ -77,7 +77,7 @@ import { obtenerClientes, eliminarCliente } from './api.js';
         if(response.isConfirmed) {
           eliminarCliente(clienteId);
         }
-      })
+      });
     }
     
   }
