@@ -11,7 +11,7 @@ import { validatorObject } from './utils/validator-object.js';
     // const form = new FormData(this);
     // form.get('nombre');
     event.preventDefault();
-    const nombre = document.querySelector("#nombre").value;
+    const name = document.querySelector("#nombre").value;
     const email = document.querySelector("#email").value;
     const telefono = document.querySelector("#telefono").value;
     const empresa = document.querySelector("#empresa").value;
@@ -20,7 +20,7 @@ import { validatorObject } from './utils/validator-object.js';
     //* Vamos a construir el objeto
     //* ES6 2015
     const cliente = {
-      nombre,
+      name,
       email,
       telefono,
       empresa

@@ -11,12 +11,12 @@ import { obtenerClientes, eliminarCliente } from './api.js';
     const clientes = await obtenerClientes(); //* el array clientes
 
     clientes.forEach( (cliente) => {
-      const  { nombre, email, telefono, empresa, id } = cliente;
+      const  { name, email, telefono, empresa, id } = cliente;
       const row = document.createElement('tr');
 
       row.innerHTML += `
         <td>
-          <p>${nombre}</p>
+          <p>${name}</p>
         </td>
         <td>
           <p>${email}</p>

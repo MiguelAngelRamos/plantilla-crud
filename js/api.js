@@ -1,11 +1,11 @@
-const URL = 'http://localhost:3000/clientes';
+const URL = 'http://localhost:3000/api/users';
 
 //* Get obtener los clientes
 export const obtenerClientes = async () => {
   try {
     const resultado = await fetch(URL);
     const clientes = await resultado.json();
-    return clientes; //* array
+    return clientes.data; //* array
   } catch (error) {
     throw error;
   }
@@ -14,6 +14,7 @@ export const obtenerClientes = async () => {
 //* POST crear un cliente tiene que ser un objeto 
 
 export const nuevoCliente = async (cliente) => {
+  console.log(cliente);
   try {
     await fetch(URL, {
       method: 'POST',
