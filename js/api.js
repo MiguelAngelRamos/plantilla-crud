@@ -11,6 +11,18 @@ export const obtenerClientes = async () => {
   }
 };
 
+export const obtenerClienteId = async (id) => {
+  //* http://localhost:3000/api/users/633b5c2b2c34da7842a08663
+  try {
+    const resultado = await fetch(`${URL}/${id}`);
+    const cliente  = await resultado.json();
+    console.log(cliente.data);
+    return cliente.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 //* POST crear un cliente tiene que ser un objeto 
 export const nuevoCliente = async (cliente) => {
   console.log(cliente);
