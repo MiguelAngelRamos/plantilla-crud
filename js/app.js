@@ -1,6 +1,7 @@
 import { obtenerClientes, eliminarCliente } from './api.js';
 
 (() => {
+  //* en el listado esta todo el tbody
   const listado = document.querySelector('#listado-clientes');
 
   document.addEventListener('DOMContentLoaded', mostrarClientes);
@@ -11,7 +12,7 @@ import { obtenerClientes, eliminarCliente } from './api.js';
     const clientes = await obtenerClientes(); //* el array clientes
 
     clientes.forEach( (cliente) => {
-      const  { name, email, telefono, empresa, id } = cliente;
+      const  { name, email, telefono, empresa, _id } = cliente;
       const row = document.createElement('tr');
 
       row.innerHTML += `
@@ -28,30 +29,10 @@ import { obtenerClientes, eliminarCliente } from './api.js';
           <p>${empresa}</p>
         </td>
         <td>
-          <a>Editar</a>
-          <a href="#" data-cliente="${id}" class="eliminar" >Eliminar</a>
+          <a href="editar-cliente.html?id=${_id}">Editar</a>
+          <a href="#" data-cliente="${_id}" class="eliminar" >Eliminar</a>
         </td>
      `;
-
-           // row.innerHTML = row.innerHTML + `
-      //  <td>
-      //   <p>${nombre}</p>
-      //  </td>
-      //  <td>
-      //   <p>${email}</p>
-      //  </td>
-      //   <td>
-      //   <p>${telefono}</p>
-      //   </td>
-      //   <td>
-      //    <p>${empresa}</p>
-      //   </td>
-      //   <td>
-      //     <a>Editar</a>
-      //     <a>Eliminar</a>
-      //   </td>
-      // `;
-
       listado.appendChild(row);
     });
   };
@@ -60,10 +41,10 @@ import { obtenerClientes, eliminarCliente } from './api.js';
     // console.log('Click en eliminar');
     // console.log(event.target.classList);
     // console.log(event.target.classList.contains('eliminar'));
-
     if(event.target.classList.contains('eliminar')) {
       console.log(typeof event.target.dataset.cliente);
-      const clienteId = parseInt(event.target.dataset.cliente);
+      // const clienteId = parseInt(event.target.dataset.cliente);
+      const clienteId = event.target.dataset.cliente;
 
       Swal.fire({
         title: '¿Desea eliminar este registro?',
@@ -84,3 +65,22 @@ import { obtenerClientes, eliminarCliente } from './api.js';
 
 })();
 
+
+           // row.innerHTML = row.innerHTML + `
+      //  <td>
+      //   <p>${nombre}</p>
+      //  </td>
+      //  <td>
+      //   <p>${email}</p>
+      //  </td>
+      //   <td>
+      //   <p>${telefono}</p>
+      //   </td>
+      //   <td>
+      //    <p>${empresa}</p>
+      //   </td>
+      //   <td>
+      //     <a>Editar</a>
+      //     <a>Eliminar</a>
+      //   </td>
+      // `;

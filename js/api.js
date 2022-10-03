@@ -12,7 +12,6 @@ export const obtenerClientes = async () => {
 };
 
 //* POST crear un cliente tiene que ser un objeto 
-
 export const nuevoCliente = async (cliente) => {
   console.log(cliente);
   try {
@@ -29,7 +28,30 @@ export const nuevoCliente = async (cliente) => {
   }
 };
 
+//* Actualizamos el Cliente
+/**
+ * * Este método recibe el cliente con toda su informacion
+ * @param {*} cliente 
+ */
+export const editarCliente = async (cliente) => {
+  console.log(cliente);
+  try {
+    await fetch(`${URL}/${cliente._id}`, {
+      method: 'PUT',
+      body: JSON.stringify(cliente),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    window.location.href = 'index.html';
+  } catch (error) {
+    throw error;
+  }
+};
+
+//* Eliminar Cliente
 export const eliminarCliente = async (id) => {
+  console.log(id);
   try {
     //* http://localhost:3000/clientes/2
     await fetch(`${URL}/${id}`, {
