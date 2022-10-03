@@ -16,7 +16,7 @@ export const obtenerClienteId = async (id) => {
   try {
     const resultado = await fetch(`${URL}/${id}`);
     const cliente  = await resultado.json();
-    console.log(cliente.data);
+    // console.log(cliente.data);
     return cliente.data;
   } catch (error) {
     throw error;
