@@ -15,17 +15,48 @@ import { validatorObject } from './utils/validator-object.js';
     // console.log(parametroURL);
     // console.log(parametroURL.get('id'));
     const idMongo = parametroURL.get('id');
-   
+  
     // obtenerClienteId(idMongo).then(cliente => {
     //   console.log(cliente);
     // }).catch();
     try {
       const cliente = await obtenerClienteId(idMongo);
       // console.log(cliente);
+      mostrarCliente(cliente);
     } catch (error) {
       throw error;
     }
 
+    //* Obtenemos el formulario
+    const formulario = document.querySelector("#formulario");
+    formulario.addEventListener('submit', validarCliente);
   
   });
+
+  function mostrarCliente(cliente) {
+    const { name, email, empresa, telefono, _id } = cliente;
+    nombreInput.value = name;
+    emailInput.value = email;
+    telefonoInput.value = telefono;
+    empresaInput.value = empresa;
+    idInput.value = _id;
+  };
+
+  function validarCliente(event) {
+    event.preventDefault();
+    //* Construir el objeto para actualizar en la base de datos
+    const cliente = {
+      name: nombreInput.value,
+      email: emailInput.value,
+      empresa: empresaInput.value,
+      telefono: telefonoInput.value,
+      _id: idInput.value
+    }
+
+    if(validatorObject(cliente)) {
+      mostrarAlerta('Todos los campos son obligatorios');
+      return;
+    }
+    editarCliente(cliente);
+  }
 })();
